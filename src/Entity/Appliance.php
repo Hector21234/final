@@ -11,7 +11,7 @@ class Appliance
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $Id = null;
 
     
 
@@ -24,7 +24,7 @@ class Appliance
     #[ORM\Column(length: 255)]
     private ?string $info = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 500)]
     private ?string $imagen = null;
 
     public function getId(): ?int

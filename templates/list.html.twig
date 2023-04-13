@@ -1,6 +1,17 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-<div style="height: 100px;width:60%; background-color:white;position:relative;left:400px;top:150px;height:800px;">
- 
+
+
+{% for task in data|sort((a, b) => a.getNombre() <=> b.getNombre()) %}
+<br>
+<br>
+				 <div class="container" style="background-color:#FA8128;height:250px">
+
+ <td> <img src="{{task.getImagen()}}" style="height:230px;position:relative;left:0px;top:10px"> </td>
 </div>
+<br>
+<br>
+<br>
+<br>
+			{% endfor %}
 {% endblock %}
