@@ -1,0 +1,13 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+<div style="width:50%; background-color:#FA8128;position:relative;left:400px;top:150px;">
+<h1>{{data.getNombre()}} </h1>
+		<ul>
+           <img src="{{data.getImagen()}}" style="height:300px;width:300px;position:relative;left:30%;top:10px;"><br><br>
+			<div style="font-size:25px"><li>Modelo: {{data.getModelo()}}</div></li>
+		
+           <div style="font-size:25px"> <li>info producto: {{data.getInfo()}}</li> </div>
+			</ul>
+
+</div>
+{% endblock %}

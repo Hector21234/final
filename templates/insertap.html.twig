@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+	<div id="content">
+		<div id="form_container">
+			<form method="post" action="">
+				<div>
+					<h2>Nuevo electrodomestico</h2>
+				</div>
+				<label for="id">Id</label>
+				<div>
+					<input name="id" type="text" maxlength="45" size="45" value=""/>
+				</div>
+
+				<label for="nombre">Nombre</label>
+				<div>
+					<input name="nombre" type="text" maxlength="45" size="45" value=""/>
+				</div>
+                <label for="modelo">Modelo</label>
+				<div>
+					<input name="modelo" type="text" maxlength="45" size="45" value=""/>
+				</div>
+                <label for="info">Info</label>
+				<div>
+					<input name="info" type="text" maxlength="500" size="45" value=""/>
+				</div>
+                <label for="Imagen">Imagen</label>
+				<div>
+					<input name="imagen" type="text" maxlength="500" size="45" value=""/>
+				</div>
+
+				
+				</div>
+
+				<input type="submit" name="submit" value="Insert"/>
+		</form>
+	</div>
+</div>{% endblock %}

@@ -1,17 +1,18 @@
 {% extends "layout.html.twig" %}
 {% block content %}
 
-
+<a href='{{path('app_insertar')}}'class="insert" >Insertar</a>
 {% for task in data|sort((a, b) => a.getNombre() <=> b.getNombre()) %}
 <br>
 <br>
-				 <div class="container" style="background-color:#FA8128;height:250px">
-
- <td> <img src="{{task.getImagen()}}" style="height:230px;position:relative;left:0px;top:10px"> </td>
+	<div class="container" ><img src="{{task.getImagen()}}" style="height:230px;position:relative;left:0px;top:10px;">
+	{{task.getNombre()}}
+	 <a href='/delete/{{task.getId()}}'style="position:relative;left:400px;top:50px;">
+	 <img src="/image/trash.jpg" width="100px" height="100px">
+	 </a>
+	 <a href='/info/{{task.getId()}}'style="position:relative;left:140px;top:80px;font-size:25px"> Info producto </a>
 </div>
-<br>
-<br>
-<br>
-<br>
+
+
 			{% endfor %}
 {% endblock %}

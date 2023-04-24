@@ -38,7 +38,25 @@ class ApplianceRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function delete(int $id): void
+    {
+        $delete = $this->find($id);
+        $this->remove($delete, true);
+    }
 
+    public function insert(array $data): void
+    {
+        $objeto = new Appliance;
+        $objeto
+            ->setId($data['id'])
+            ->setNombre($data['nombre'])
+            ->setModelo($data['modelo'])
+            ->setInfo($data['info'])
+            ->setImagen($data['imagen'])
+            ;
+        $this->getEntityManager()->persist($objeto);
+        $this->getEntityManager()->flush();
+    }
 //    /**
 //     * @return Appliance[] Returns an array of Appliance objects
 //     */

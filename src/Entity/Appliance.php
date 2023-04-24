@@ -11,20 +11,20 @@ class Appliance
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $Id = null;
+    private ?int $id = null;
 
     
 
-    #[ORM\Column(length: 255)]
-    private ?string $Nombre = null;
+    #[ORM\Column(name: 'nombre', length: 255)]
+    private ?string $nombre = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Modelo = null;
+    #[ORM\Column(name: 'modelo', length: 255)]
+    private ?string $modelo = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(name: 'info', length: 900)]
     private ?string $info = null;
 
-    #[ORM\Column(length: 500)]
+    #[ORM\Column(name: 'imagen', length: 500)]
     private ?string $imagen = null;
 
     public function getId(): ?int
@@ -32,33 +32,33 @@ class Appliance
         return $this->id;
     }
 
-    public function setId(string $Id): self
+    public function setId(string $id): self
     {
-        $this->Id = $Id;
+        $this->Id = $id;
 
         return $this;
     }
 
     public function getNombre(): ?string
     {
-        return $this->Nombre;
+        return $this->nombre;
     }
 
-    public function setNombre(string $Nombre): self
+    public function setNombre(string $nombre): self
     {
-        $this->Nombre = $Nombre;
+        $this->nombre = $nombre;
 
         return $this;
     }
 
     public function getModelo(): ?string
     {
-        return $this->Modelo;
+        return $this->modelo;
     }
 
-    public function setModelo(string $Modelo): self
+    public function setModelo(string $modelo): self
     {
-        $this->Modelo = $Modelo;
+        $this->modelo = $modelo;
 
         return $this;
     }

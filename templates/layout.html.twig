@@ -2,6 +2,6 @@
 {% extends "base.html.twig" %}
 {% block layout %}
 
-<div style="background-color:#4169E1; width:80%;height:200px;position:relative;left:200px;"><img src="/image/logo.jpeg" width="200px" height="200px"><a href="{{ path('app_main') }}" style="color:black;position:relative;left:1450px;top:90px;">inicio</a><a href="{{ path('app_list') }}" style="color:black;position:relative;left:1500px;top:90px;">navegar</a></div>
+<div class="caja"><img src="/image/logo.jpeg"class="logo"><a href="{{ path('app_main') }}" class="home">inicio</a><a href="{{ path('app_list') }}" class="navegar" >navegar</a></div>
 {% block content %}{% endblock %}
 {% endblock %}
