@@ -57,6 +57,23 @@ class ApplianceRepository extends ServiceEntityRepository
         $this->getEntityManager()->persist($objeto);
         $this->getEntityManager()->flush();
     }
+
+    public function update(int $id, array $data): void
+    {
+        $objeto2 = $this->find($id);
+        $apli = $this
+            ->getEntityManager()
+            ->getRepository(Appliance::class)
+            ->find($data['id']);
+            $objeto2
+        ->setId($data['id'])
+        ->setNombre($data['nombre'])
+        ->setModelo($data['modelo'])
+        ->setInfo($data['info'])
+        ->setImagen($data['imagen'])
+        ;
+        $this->save($objeto2, true);
+    }
 //    /**
 //     * @return Appliance[] Returns an array of Appliance objects
 //     */

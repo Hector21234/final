@@ -39,6 +39,20 @@ class UsuarioRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function insertUsuario(array $user): void
+    {
+        $objeto = new Usuario;
+        $objeto
+            ->setNombreUsuario($user['nombre_usuario'])
+            ->setGmail($user['gmail'])
+            ->setPassword($user['password'])
+           
+            ;
+        $this->getEntityManager()->persist($objeto);
+        $this->getEntityManager()->flush();
+    }
+
 //    /**
 //     * @return Usuario[] Returns an array of Usuario objects
 //     */

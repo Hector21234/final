@@ -13,13 +13,13 @@ class Usuario
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(name:'nombre_usuario' ,length: 255)]
     private ?string $NombreUsuario = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(name:'gmail' ,length: 255)]
     private ?string $Gmail = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(name:'password' ,length: 255)]
     private ?string $password = null;
 
     public function getId(): ?int

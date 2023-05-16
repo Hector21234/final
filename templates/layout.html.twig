@@ -2,6 +2,8 @@
 {% extends "base.html.twig" %}
 {% block layout %}
 
-<div class="caja"><img src="/image/logo.jpeg"class="logo"><a href="{{ path('app_main') }}" class="home">inicio</a><a href="{{ path('app_list') }}" class="navegar" >navegar</a></div>
+<div class="caja"><img src="/image/logo.jpeg"class="logo"><a href="{{ path('app_main') }}" class="home" style="color:white;position:relative;left:1000px; top:90px;font-size:25px;text-decoration: none;"><b>inicio</b>
+</a><a href="{{ path('app_list') }}" class="navegar" style="color:white;position:relative;left:1100px;top:90px;font-size:25px;text-decoration: none;"><b>electrodomesticos</b></a>
+ <a href="{{ path('app_insertarUser') }}" class="user" style="color:white;position:relative;left:1200px;top:90px;font-size:25px;text-decoration: none;"><b>crear cuenta </b></a></div>
 {% block content %}{% endblock %}
 {% endblock %}

@@ -19,7 +19,18 @@ class CrudController extends AbstractController
         $delete->delete($id);
         return $this->redirectToRoute('app_main', []);
     }
-
+    #[Route('/update/{id}', name: 'app_update')]
+    public function update(int $id, EntityManagerInterface $entityManager, Request $request): Response
+    {
+        $update = $entityManager->getRepository(Appliance::class);
+        if (count($request->request->all())) $update->update($id, $request->request->all());
+        $data = $update->find($id);
+     
+        return $this->render("Update.html.twig", [
+            'data' => $data,
+            
+        ]);
+    }
 
     #[Route('/insertar', name: 'app_insertar')]
     public function insert(EntityManagerInterface $entityManager, Request $request): Response
